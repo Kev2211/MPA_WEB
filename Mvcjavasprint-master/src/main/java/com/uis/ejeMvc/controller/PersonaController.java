@@ -1,6 +1,7 @@
 package com.uis.ejeMvc.controller;
 
 import com.uis.ejeMvc.model.Persona;
+import com.uis.ejeMvc.model.Tipodocumento;
 import com.uis.ejeMvc.repository.PersonaRepositoryInter;
 import com.uis.ejeMvc.service.PersonaService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -33,17 +34,16 @@ public class PersonaController {
     @GetMapping("/personas/nuevo")
     public String mostrarFormularioDeNuevaPersona(Model model){
         model.addAttribute("persona", new Persona());
+        model.addAttribute("tipodocumento", new Tipodocumento());
+        model.addAttribute("persona", new Persona());
         return "persona_formulario";
     }
 
-    @PostMapping("/personas/")
+    @PostMapping("/personas/guardar")
     public String guardarPersona(Persona persona){
         personaRepositoryInter.save(persona);
-        return "redirect:/personas";
+        return "redirect:/persona/personas";
     }
-
-
-
 
 }
 

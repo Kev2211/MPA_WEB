@@ -27,11 +27,11 @@ public class Persona {
     private String contrasena;
 
     @ManyToOne
-    @JoinColumn(name = "Lugarresidencia")
+    @JoinColumn(name = "lugarredidencia")
     private Ciudad ciudad;
 
     @ManyToOne
-    @JoinColumn(name = "Idtipodocumento")
+    @JoinColumn(name = "tipodocumento_id")
     private Tipodocumento tipodocumento;
 
     public long getId() {
@@ -123,6 +123,22 @@ public class Persona {
     }
 
     public Persona(String name, String apellidos, String documento, String fechanacimento, String email, String telefono, String usuario, String contrasena, Ciudad ciudad, Tipodocumento tipodocumento) {
+        super();
+        this.name = name;
+        this.apellidos = apellidos;
+        this.documento = documento;
+        this.fechanacimento = fechanacimento;
+        this.email = email;
+        this.telefono = telefono;
+        this.usuario = usuario;
+        this.contrasena = contrasena;
+        this.ciudad = ciudad;
+        this.tipodocumento = tipodocumento;
+    }
+
+    public Persona(long id, String name, String apellidos, String documento, String fechanacimento, String email, String telefono, String usuario, String contrasena, Ciudad ciudad, Tipodocumento tipodocumento) {
+        super();
+        this.id = id;
         this.name = name;
         this.apellidos = apellidos;
         this.documento = documento;

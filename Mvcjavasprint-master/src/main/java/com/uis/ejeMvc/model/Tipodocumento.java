@@ -43,6 +43,15 @@ public class Tipodocumento {
     }
 
     public Tipodocumento(String nombre, String descripcion) {
+        super();
+        this.nombre = nombre;
+        this.descripcion = descripcion;
+    }
+
+    public Tipodocumento(long id, String nombre, String descripcion) {
+
+        super();
+        this.id = id;
         this.nombre = nombre;
         this.descripcion = descripcion;
     }

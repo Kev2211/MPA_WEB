@@ -42,6 +42,14 @@ public class Ciudad {
     }
 
     public Ciudad(String name, String descripcion) {
+        super();
+        this.name = name;
+        this.descripcion = descripcion;
+    }
+
+    public Ciudad(long id, String name, String descripcion) {
+        super();
+        this.id = id;
         this.name = name;
         this.descripcion = descripcion;
     }
